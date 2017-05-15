@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">BMI</string>
     <string name="text_height">Рост</string>
-    <string name="hint_text_height">100 - 300см</string>
+    <!-- <string name="hint_text_height">100 - 300см</string> -->
     <string name="text_weight">Вес</string>
-    <string name="hint_text_weight">40 - 200кг</string>
+    <!-- <string name="hint_text_weight">40 - 200кг</string> -->
     <string name="button_name_calculate">Расчитать</string>
     <string name="hint_tv_result_default">Результат</string>
 </resources>
