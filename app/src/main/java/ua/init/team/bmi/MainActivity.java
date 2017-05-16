@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import org.w3c.dom.Text;
 import static ua.init.team.bmi.R.id.bt_calculate;
 import static ua.init.team.bmi.R.id.et_height;
 import static ua.init.team.bmi.R.id.et_weight;
+import static ua.init.team.bmi.R.id.iv;
 import static ua.init.team.bmi.R.id.pb_correct_data;
 import static ua.init.team.bmi.R.id.tv_result;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Button mBtCalculate;
     ProgressBar mPb;
     TextView mTvResult;
+    ImageView mIv;
 
     static final int MIN_HEIGHT_VALUE = 100;
     static final int MAX_HEIGHT_VALUE = 300;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         mBtCalculate = (Button)findViewById(bt_calculate);
         mPb = (ProgressBar)findViewById(pb_correct_data);
         mTvResult = (TextView)findViewById(tv_result);
+        mIv = (ImageView)findViewById(iv);
 
         mEtHeight.setHint(MIN_HEIGHT_VALUE + " - " + MAX_HEIGHT_VALUE + "см");
         mEtWeight.setHint(MIN_WEIGHT_VALUE + " - " + MAX_WEIGHT_VALUE + "кг");
@@ -171,10 +175,13 @@ public class MainActivity extends AppCompatActivity {
 //                    Toast.makeText(MainActivity.this, "" + bmi, Toast.LENGTH_SHORT).show();
                     if (bmi < 16){
                         bodyType = "Выраженный дефицит массы тела";
+                        mIv.setImageResource(R.drawable.p);
                     } else if (bmi < 18.5){
                         bodyType = "Дефицит массы тела";
+                        mIv.setImageResource(R.drawable.u);
                     } else if (bmi >= 18.5 && bmi < 25){
                         bodyType = "Норма";
+                        mIv.setImageResource(R.drawable.normone);
                     } else if (bmi >= 25 && bmi < 30){
                         bodyType = "Избыточная масса тела";
                     } else if (bmi >= 30 && bmi < 35){
